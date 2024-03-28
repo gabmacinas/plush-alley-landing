@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className="flex items-center justify-between py-4 px-8">
       <Link href="/" className="text-lg font-bold">
-        Plush Alley
+        Plush Alley & Co.
       </Link>
       <nav className="flex space-x-4">
         <DropdownMenu>
