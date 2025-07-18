@@ -44,8 +44,8 @@ export default function Home() {
     </Button>
     <Button
       className="mt-8 text-lg lg:w-1/2 w-9/12 shadow-md"
-      onClick={() => openLinkInNewTab("https://www.instagram.com/plush.alley/")}
-    > Instagram
+      onClick={() => openLinkInNewTab("https://www.tiktok.com/@plush.alley")}
+    > Tiktok
     </Button>
     </div>
   </div>
