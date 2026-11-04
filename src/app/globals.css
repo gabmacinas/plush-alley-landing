@@ -65,6 +65,22 @@
       linear-gradient(90deg, hsl(var(--grid-line) / 0.6) 1px, transparent 1px);
     background-size: 32px 32px;
   }
+  body {
+    position: relative;
+  }
+  /* paw sticker pattern, kept faint so text stays readable */
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url("/brand/pattern.png") 0 0 / 540px repeat;
+    opacity: 0.15;
+  }
+  .dark body::before {
+    opacity: 0.06;
+  }
 }
 
 /* Named text styles (landing-page-design B1) */
