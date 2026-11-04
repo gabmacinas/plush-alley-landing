@@ -1,25 +1,35 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Fredoka, Nunito_Sans, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import Head from "next/head";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans"
-});
+const nunitoSans = Nunito_Sans({ subsets: ["latin"], variable: "--font-sans" });
+const fredoka = Fredoka({ subsets: ["latin"], variable: "--font-display" });
+const notoJp = Noto_Sans_JP({ weight: ["500"], preload: false, variable: "--font-jp" });
+
+const description = "Japan-based anime plushies, figures & goods — shipped anywhere in the Philippines. 🧸🐾";
 
 export const metadata: Metadata = {
-  title: "Plush Alley",
-  description: "Discover delightful plush toys and accessories at Plush Alley! From cuddly companions to unique collectibles, explore our curated selection. Start your plush adventure today! 🧸🛒",
-  keywords: "plush, plushies, stuffed toys, stuffed animals, plush toys, plushie, plushy, stuffed toy, stuffed animal, soft toy, soft toys, soft toy, soft toys, cuddly toy, cuddly toys, cuddly plush, cuddly plushies, cuddly stuffed toy, cuddly stuffed toys, cuddly stuffed animal, cuddly stuffed animals, cute plush, cute plushies, cute stuffed toy, cute stuffed toys, cute stuffed animal, cute stuffed animals, adorable plush, adorable plushies, adorable stuffed toy, adorable stuffed toys, adorable stuffed animal, adorable stuffed animals, kawaii plush, kawaii plushies, kawaii stuffed toy, kawaii stuffed toys, kawaii stuffed animal, kawaii stuffed animals, collectible plush, collectible plushies, collectible stuffed toy, collectible stuffed toys, collectible stuffed animal, collectible stuffed animals, limited edition plush, limited edition plushies, limited edition stuffed toy, limited edition stuffed toys, limited edition stuffed animal, limited edition stuffed animals, rare plush, rare plushies, rare stuffed toy, rare stuffed toys, rare stuffed animal, rare stuffed animals, unique plush, unique plushies, unique stuffed toy, unique stuffed toys, unique stuffed animal, unique stuffed animals, custom plush, custom plushies, custom stuffed toy, custom stuffed toys, custom stuffed animal, custom stuffed animals, personalized plush, personalized plushies, personalized stuffed toy, personalized stuffed toys, personalized stuffed animal, personalized stuffed animals, bespoke plush, bespoke plushies, bespoke stuffed toy, bespoke stuffed toys, bespoke stuffed animal, bespoke stuffed animals, handmade plush, handmade plushies, handmade stuffed toy, handmade stuffed toys, handmade stuffed animal, handmade stuffed animals, artisan plush, artisan plushies, artisan stuffed toy, artisan stuffed toys, artisan stuffed animal, artisan stuffed animals, designer plush, designer plushies, designer stuffed toy, designer stuffed toys, designer stuffed animal, designer stuffed animals, luxury plush, luxury plushies, luxury stuffed toy, luxury stuffed toys, luxury stuffed animal, luxury stuffed animals, premium plush, premium plushies, premium stuffed toy, premium stuffed toys, premium stuffed animal, premium stuffed animals, high-quality plush, high-quality plushies, high-quality stuffed toy, high-quality stuffed toys, high-quality stuffed animal, high-quality stuffed animals, top-notch plush, top-notch plushies, top-notch stuffed toy, top-notch stuffed toys, top-notch stuffed animal, top-notch stuffed animals",
+  title: "Plush Alley — Japan Based Anime Merchandise",
+  description,
+  keywords: "anime plush, anime plushies Philippines, anime figures PH, anime merch PH, Japan anime goods, Taguig anime shop, PlushAlley, AnimePlushPH, AnimeMerchPH, TaguigShop",
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_PH",
     url: "https://plush-alley.com",
+    title: "Plush Alley",
+    description,
     images: [
       {
         url: "https://plush-alley.com/og-image.png",
@@ -31,22 +41,20 @@ export const metadata: Metadata = {
   }
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#B83E73" },
+    { media: "(prefers-color-scheme: dark)", color: "#2E2A3D" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <Head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-        <link rel="manifest" href="/site.webmanifest"/>
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff999f"/>
-        <meta name="msapplication-TileColor" content="#ff999f"/>
-        <meta name="theme-color" content="#ff999f"/>
-      </Head>
+    <html lang="en" suppressHydrationWarning className={`${nunitoSans.variable} ${fredoka.variable} ${notoJp.variable}`}>
       <body>
         <ThemeProvider
           attribute="class"
