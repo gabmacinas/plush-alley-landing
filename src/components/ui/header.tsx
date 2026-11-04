@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
@@ -14,9 +15,10 @@ export default function Header() {
   const { setTheme, theme } = useTheme()
 
   return (
-    <header className="flex items-center justify-between py-4 px-8">
-      <Link href="/" className="text-lg font-bold">
-        Plush Alley & Co.
+    <header className="flex items-center justify-between py-4 px-6 sm:px-8">
+      <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold">
+        <Image src="/brand/icon.png" alt="" width={40} height={30} />
+        <Image src="/brand/sticker-4.png" alt="Plush Alley" width={600} height={120} className="h-6 w-auto" />
       </Link>
       <nav className="flex space-x-4">
         <DropdownMenu>
