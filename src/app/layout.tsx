@@ -10,12 +10,12 @@ const nunitoSans = Nunito_Sans({ subsets: ["latin"], variable: "--font-sans" });
 const fredoka = Fredoka({ subsets: ["latin"], variable: "--font-display" });
 const notoJp = Noto_Sans_JP({ weight: ["500"], preload: false, variable: "--font-jp" });
 
-const description = "Japan-based anime plushies, figures & goods — shipped anywhere in the Philippines. 🧸🐾";
+const description = "Authentic anime plushies, figures and goods from Japan, shipped anywhere in the Philippines. 🧸🐾";
 
 export const metadata: Metadata = {
-  title: "Plush Alley — Japan Based Anime Merchandise",
+  title: "Plush Alley · Japan Based Anime Merchandise",
   description,
-  keywords: "anime plush, anime plushies Philippines, anime figures PH, anime merch PH, Japan anime goods, Taguig anime shop, PlushAlley, AnimePlushPH, AnimeMerchPH, TaguigShop",
+  keywords: "anime plush, anime plushies Philippines, anime figures PH, anime merch PH, Japan anime goods, anime shop, PlushAlley, AnimePlushPH, AnimeMerchPH, Shop",
   icons: {
     icon: [
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -62,6 +62,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-card focus:px-4 focus:py-2">Skip to content</a>
           <Header />
           {children}
           <SpeedInsights />

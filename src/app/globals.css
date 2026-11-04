@@ -66,3 +66,17 @@
     background-size: 32px 32px;
   }
 }
+
+/* Named text styles (landing-page-design B1) */
+@layer components {
+  .heading-1 { @apply font-display text-4xl font-semibold sm:text-6xl; }
+  .heading-2 { @apply font-display text-3xl font-semibold sm:text-5xl; }
+  .heading-3 { @apply font-display text-3xl font-semibold sm:text-4xl; }
+  .heading-6 { @apply font-display text-xl font-semibold; }
+  .title-4 { @apply text-sm font-medium; }
+  .body-3 { @apply text-base font-normal; }
+  .body-6 { @apply text-sm font-normal; }
+  .button-md { @apply text-base font-semibold; }
+  .caption-3 { @apply text-xs font-semibold; }
+  .caption-5 { @apply text-xs font-normal; }
+}
